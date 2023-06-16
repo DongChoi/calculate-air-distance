@@ -3,23 +3,23 @@ import "./App.css";
 import React, { useState } from "react";
 function App() {
   const initialLocationData = {
-    location1: { lng: 0, lat: 0 },
-    location2: { lng: 0, lat: 0 },
+    lng1: null,
+    lat1: null,
+    lng2: null,
+    lat2: null,
   };
-  const [formData1, setFormData1] = useState(initialLocationData);
-  const [formData2, setFormData2] = useState(initialLocationData);
+  const [formData, setFormData] = useState(initialLocationData);
   const [airDistance, setAirDistance] = useState(null);
 
-  function updateFormData1(event) {
+  function updateFormData(event) {
     const { name, value } = event.target;
-    setFormData1({ ...formData1, [name]: value });
+    setFormData({ ...formData, [name]: value });
+    console.log(formData);
   }
-  function updateFormData2(event) {
-    const { name, value } = event.target;
-    setFormData2({ ...formData2, [name]: value });
-  }
+
   function calculateDistance(evt) {
     evt.preventDefault();
+    //logic...
     setAirDistance(1);
   }
 
@@ -27,49 +27,47 @@ function App() {
     <div className="App">
       <form onSubmit={calculateDistance}>
         <div>
-          Location 1: <label>Longitude1:</label>
+          Location 1:
           <input
-            name="lng"
-            label="lng"
+            name="lng1"
+            label="lng1"
             placeholder="Longitude1"
             required
-            onChange={updateFormData1}
-            value={formData1.lng}
+            onChange={updateFormData}
+            value={formData.lng1}
           />
-          <label>Latitude1:</label>
           <input
-            name="lat"
-            label="lat"
+            name="lat1"
+            label="lat1"
             placeholder="Latitude1"
             required
-            onChange={updateFormData1}
-            value={formData1.lat}
+            onChange={updateFormData}
+            value={formData.lat1}
           />
         </div>
         <div>
-          Location 2: <label>Longitude2:</label>
+          Location 2:
           <input
-            name="lng"
-            label="lng"
+            name="lng2"
+            label="lng2"
             placeholder="Longitude2"
             required
-            onChange={updateFormData2}
-            value={formData2.lng}
+            onChange={updateFormData}
+            value={formData.lng2}
           />
-          <label>Latitude2:</label>
           <input
-            name="lat"
-            label="lat"
+            name="lat2"
+            label="lat2"
             placeholder="Latitude2"
             required
-            onChange={updateFormData2}
-            value={formData2.lat}
+            onChange={updateFormData}
+            value={formData.lat2}
           />
         </div>
         <button type="submit">calculate!</button>
       </form>
 
-      {airDistance && airDistance}
+      <b>{airDistance && airDistance}</b>
     </div>
   );
 }
