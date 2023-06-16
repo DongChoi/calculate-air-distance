@@ -1,38 +1,45 @@
-.App {
-  text-align: center;
+/*please look over this recruiters, I had to make this in 15 minutes!*/
+
+.active {
+  color: purple;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.span {
+  color: lightgray;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+span {
+  padding-right: 1rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.spans {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+}
+
+.container {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-bottom: 1rem;
+  background-color: rgb(174, 172, 170);
 }
 
-.App-link {
-  color: #61dafb;
+button {
+  position: relative;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.inputs {
+  padding-bottom: 2rem;
+}
+
+input {
+  margin-right: 1rem;
+}
+
+b {
+  display: flex;
+  justify-content: center;
+}
+
+.main {
+  padding-top: 1rem;
 }
